@@ -1,0 +1,55 @@
+<div class="container my-5">
+  <h1 class="text-center text-info mb-3">Register To Be A Member</h1>
+  <div class="col-md-6 mx-auto">
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="startRegister(registerForm.value)"
+      autocomplete="off"
+    >
+      <div class="form-group">
+        <label for="name">Name </label>
+        <input type="text" class="form-control rounded-0" id="name" name="name" formControlName="name">
+        <small id="nameRequiredHelp" class="form-text text-danger rounded-0" *ngIf="registerForm.get('name').hasError('required')">
+          Name Required
+        </small>
+
+        <small id="nameHelp" class="form-text text-info rounded-0" *ngIf="registerForm.get('name').hasError('minlength')">
+          Supply valid name
+        </small>
+
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email </label>
+        <input type="email" class="form-control rounded-0" id="email" name="email" formControlName="email">
+        <small id="emailRequiredHelp" class="form-text text-danger rounded-0" *ngIf="registerForm.get('email').hasError('required')">
+          Email Required
+        </small>
+
+        <small id="emailHelp" class="form-text text-info rounded-0" *ngIf="registerForm.get('email').hasError('email')">
+          Supply valid email
+        </small>
+
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" formControlName="password">
+        <small id="passwordRequiredHelp" class="form-text text-danger rounded-0"
+               *ngIf="registerForm.get('password').hasError('required')">
+          Password Required
+        </small>
+
+        <small id="passwordHelp" class="form-text text-danger rounded-0"
+               *ngIf="registerForm.get('password').hasError('minlength')">
+          Password must be at least 6 characters
+        </small>
+
+      </div>
+      <div class="row justify-content-between no-gutters">
+        <a routerLink="/auth" class="text-muted">Already Member, please login</a>
+        <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary btn-sm">Register</button>
+      </div>
+
+    </form>
+  </div>
+</div>

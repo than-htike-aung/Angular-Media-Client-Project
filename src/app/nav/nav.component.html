@@ -16,13 +16,23 @@
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
+            Member
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" *ngIf="isAuth" (click)="logoutUser()">Logout</a>
+            <a class="dropdown-item" routerLink="auth" *ngIf="!isAuth">Login</a>
+            <a class="dropdown-item" routerLink="auth/register" *ngIf="!isAuth">Register</a>
+          </div>
+        </li>
+
+        <li class="nav-item dropdown" *ngIf="isAuth">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="nbdd" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Admin
+          </a>
+          <div class="dropdown-menu" aria-labelledby="nbdd">
+            <a class="dropdown-item" routerLink="/admin/gallery">Gallery</a>
+            <a class="dropdown-item" routerLink="/admin/post/all">Post</a>
+            <a class="dropdown-item" routerLink="/admin">Home</a>
           </div>
         </li>
 
