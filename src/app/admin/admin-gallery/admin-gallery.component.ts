@@ -27,7 +27,7 @@ images;
   }
 
   copyImage(image){
-    let copyImage = 'http://localhost:3000/uploads' + image;
+    let copyImage = 'http://localhost:3000/uploads/' + image;
     let input = document.createElement('input');
     input.value = copyImage;
     document.body.appendChild(input);

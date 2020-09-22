@@ -22,6 +22,7 @@ import { GalleryCreateComponent } from './admin/gallery-create/gallery-create.co
 import { PostCreateComponent } from './admin/post-create/post-create.component';
 import {AuthInterceptor} from "./sysgen/auth.interceptor";
 import { PostAllComponent } from './admin/post-all/post-all.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PostAllComponent } from './admin/post-all/post-all.component';
     AdminGalleryComponent,
     GalleryCreateComponent,
     PostCreateComponent,
-    PostAllComponent
+    PostAllComponent,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,

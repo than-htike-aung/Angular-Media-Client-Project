@@ -1,24 +1,7 @@
-<div class="container">
-  <div class="col-md-4 mx-auto">
-    <nav aria-label="Page navigation example">
-      <ul class="pagination">
-        <li class="page-item">
-          <a class="page-link"  aria-label="Previous" (click)="reloadPage(-1)" style="cursor: pointer">
-            <span aria-hidden="true">&laquo;</span>
-          </a>
-        </li>
-        <li class="page-item"><a class="page-link" href="#">{{page}}</a></li>
-        <li class="page-item">
-          <a class="page-link"  aria-label="Next" (click)="reloadPage(1)" style="cursor: pointer">
-            <span aria-hidden="true">&raquo;</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</div>
 
-<div class="container my-5">
+
+<div class="container my-3">
+  <a routerLink="/admin/post/create" class="btn btn-primary btn-sm mb-3">Create</a>
   <div class="row">
     <div class="col-md-4 mb-3" *ngFor="let product of products">
       <div class="card">
@@ -34,3 +17,22 @@
 </div>
 
 
+<div class="container">
+ <div class="row justify-content-center">
+    <nav aria-label="Page navigation example">
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link"  aria-label="Previous" (click)="reloadPage(-1)" style="cursor: pointer">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="page-item"><a class="page-link" href="#">{{page}}</a></li>
+        <li class="page-item">
+          <a class="page-link"  aria-label="Next" (click)="reloadPage(1)" style="cursor: pointer">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+ </div>
+</div>

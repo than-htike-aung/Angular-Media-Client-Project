@@ -11,16 +11,21 @@ export class DetailComponent implements OnInit {
 
   id;
   products;
+  loadShow = false;
+
+
   constructor(private route:ActivatedRoute, private http:LocalService) {
     this.id = route.snapshot.params['id'];
   }
 
   ngOnInit() {
+    this.loadShow = true
     this.http.getCatProduct(this.id).subscribe(
       response =>{
         if (response.con){
           console.log(response.msg)
           this.products = response.msg;
+          this.loadShow = false;
         }else {
           alert(response.msg)
         }

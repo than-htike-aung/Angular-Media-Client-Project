@@ -12,9 +12,11 @@ import {AdminGalleryComponent} from "../admin/admin-gallery/admin-gallery.compon
 import {GalleryCreateComponent} from "../admin/gallery-create/gallery-create.component";
 import {PostCreateComponent} from "../admin/post-create/post-create.component";
 import {PostAllComponent} from "../admin/post-all/post-all.component";
+import {LoadingComponent} from "../loading/loading.component";
 
 const BMROUTE : Routes = [
   {path: '', component: HomeComponent},
+  {path:'loading', component:LoadingComponent},
   {path: 'detail/:id', component:DetailComponent},
   {
     path: 'auth', component: AuthComponent, children: [
