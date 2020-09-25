@@ -6,7 +6,8 @@
         <div class="card-body">
           <h5 class="card-title">{{product.name}}</h5>
 
-          <a [routerLink]="['detail', product.id ]" class="btn btn-primary btn-sm">Detail</a>
+<!--          <a [routerLink]="['detail', product.id ]" class="btn btn-primary btn-sm">Add To Cart</a>-->
+          <a class="btn btn-warning btn-sm" (click)="addToCart(product)">Add To Cart</a>
         </div>
       </div>
     </div>

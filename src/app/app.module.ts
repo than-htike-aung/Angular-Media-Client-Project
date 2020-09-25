@@ -23,6 +23,7 @@ import { PostCreateComponent } from './admin/post-create/post-create.component';
 import {AuthInterceptor} from "./sysgen/auth.interceptor";
 import { PostAllComponent } from './admin/post-all/post-all.component';
 import { LoadingComponent } from './loading/loading.component';
+import { CartDetailComponent } from './cart-detail/cart-detail.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { LoadingComponent } from './loading/loading.component';
     GalleryCreateComponent,
     PostCreateComponent,
     PostAllComponent,
-    LoadingComponent
+    LoadingComponent,
+    CartDetailComponent
   ],
   imports: [
     BrowserModule,

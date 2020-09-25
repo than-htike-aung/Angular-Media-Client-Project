@@ -11,7 +11,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link text-white" routerLink="loading">Home</a>
+          <a class="nav-link text-white" routerLink="cart/detail">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="badge badge-pill badge-danger my-badge">{{cartCount}}</span>
+          </a>
         </li>
 
         <li class="nav-item dropdown">

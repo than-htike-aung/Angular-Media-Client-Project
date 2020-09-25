@@ -16,10 +16,13 @@ export class LocalService {
   adminImageUploadUrl = this.BASE_URL + 'admin/image/upload';
   adminPostPaginateUrl = this.BASE_URL + 'admin/product/paginate/';
   adminPostCreateUrl = this.BASE_URL + 'admin/product/create/';
+  orderUploadUrl = this.BASE_URL + 'user/order';
 
   isAuth = new Subject<boolean>();
   authbool = this.isAuth.asObservable();
 
+  isCartChange = new Subject<boolean>();
+  cartChangeBool = this.isCartChange.asObservable();
 
   constructor(private http: HttpClient) {
 
@@ -28,6 +31,12 @@ export class LocalService {
   changeAuth(val:boolean){
     this.isAuth.next(val);
   }
+
+  cartChange(val:boolean){
+    this.isCartChange.next(val);
+  }
+
+
 
   getAllCats() {
     return this.http.get(this.catUrl).pipe(
@@ -92,6 +101,14 @@ export class LocalService {
     return this.http.post(this.adminPostCreateUrl,data).pipe(
       map(
         (response: any) => response
+      )
+    );
+  }
+
+  postOrder(data){
+    return this.http.post(this.orderUploadUrl, data).pipe(
+      map(
+        (response:any) => response
       )
     );
   }

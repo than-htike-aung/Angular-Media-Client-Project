@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {LocalService} from "../sysgen/localservice";
+import {Cart} from "../sysgen/Cart";
 
 @Component({
   selector: 'app-detail',
@@ -34,6 +35,13 @@ export class DetailComponent implements OnInit {
         console.log(error)
       }
     )
+  }
+
+  addToCart(product){
+    //console.log(product);
+   // Cart.resetDB();
+    Cart.saveDBItem(product);
+    this.http.cartChange(true);
   }
 
 }

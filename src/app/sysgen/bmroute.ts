@@ -13,11 +13,13 @@ import {GalleryCreateComponent} from "../admin/gallery-create/gallery-create.com
 import {PostCreateComponent} from "../admin/post-create/post-create.component";
 import {PostAllComponent} from "../admin/post-all/post-all.component";
 import {LoadingComponent} from "../loading/loading.component";
+import {CartDetailComponent} from "../cart-detail/cart-detail.component";
 
 const BMROUTE : Routes = [
   {path: '', component: HomeComponent},
   {path:'loading', component:LoadingComponent},
   {path: 'detail/:id', component:DetailComponent},
+  {path: 'cart/detail', component:CartDetailComponent},
   {
     path: 'auth', component: AuthComponent, children: [
       {path:'', component: LoginComponent},

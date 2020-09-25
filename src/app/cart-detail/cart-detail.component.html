@@ -1,0 +1,44 @@
+<div class="container my-5">
+  <div class="col-md-10 mx-auto">
+    <table class="table table-bordered">
+      <thead>
+      <tr class="bg-dark text-white">
+        <th scope="col">No</th>
+        <th scope="col">Name</th>
+        <th scope="col">Image</th>
+        <th scope="col">Price</th>
+        <th scope="col">Count</th>
+        <th scope="col">Action</th>
+        <th scope="col">Total</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of products; index as i">
+        <th scope="row">{{i}}</th>
+        <td>{{product.name}}</td>
+        <td><img src="{{product.image}}" alt="" style="width: 50px; height: 50px"></td>
+        <td>{{product.price}}</td>
+        <td>{{product.count}}</td>
+        <td>
+          <buttton class="btn btn-warning btn-sm" (click)="reduce(product,-1)"><i class="fa fa-arrow-down"></i></buttton>
+          {{product.count}}
+          <buttton class="btn btn-warning btn-sm" (click)="reduce(product,1)"><i class="fa fa-arrow-up"></i></buttton>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <buttton class="btn btn-danger btn-sm" (click) ="deleteProduct(product)"><i class="fa fa-trash"></i></buttton>
+        </td>
+        <td>{{product.price * product.count}}</td>
+      </tr>
+      <tr>
+        <td colspan="6" class="text-right">Grand Total</td>
+        <td>{{grandTotal}}</td>
+      </tr>
+      <tr>
+        <td colspan="7" class="text-right">
+          <buttton class="btn btn-success btn-sm" (click) ="billOut()">Bill Out</buttton>
+        </td>
+
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
